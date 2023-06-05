@@ -11,13 +11,12 @@ dotenv.config();
 export async function login(req, res) {
   try {
     const { body } = req;
-    // console.log(req);
     const result = await loginService(res, body);
     if (!res.headersSent) {
       responseRequest(res, result, authMsg.login);
     }
   } catch (error) {
-    console.log(error);
+    // console.log(httpStatus.serverInterval);
     responseFailed(res, httpStatus.serverInterval, serverMsg);
   }
 }
