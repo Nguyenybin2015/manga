@@ -122,7 +122,6 @@ export default {
   },
   methods: {
     login () {
-      console.log(this.email);
       axios.post('http://localhost:3000/api/auth/login', {
         email: this.email,
         password: this.password

@@ -1,20 +1,23 @@
-import { Router } from 'express';
-import { login, verifyOtp } from '../controllers/auth.controller.js';
-import { verifyOtpValidation } from '../validators/validates.body-request.js';
-import validateResult from '../validators/validates.result.js';
+import { Router } from "express";
+import { login, verifyOtp } from "../controllers/auth.controller.js";
+import * as validatesBodyRequestJs from "../validators/validates.body-request.js";
+import validateResult from "../validators/validates.result.js";
+import * as userControllerJs from '../controllers/user.controller.js';
 // import sendEmail from '../services/send-mail.service.js';
 // import isAuth from '../middlewares/authen-token.js';
 
 const authRoutes = Router();
 
-authRoutes.get('/test', function(req, res) {
-  res.send("test")
- });
-authRoutes.post('/login', login);
+authRoutes.post("/login", login);
 authRoutes.put(
-  '/otp-verify',
-  [...verifyOtpValidation, validateResult],
-  verifyOtp
+  "/otp-verify",
+  [...validatesBodyRequestJs.verifyOtpValidation, validateResult],
+  verifyOtp,
+);
+authRoutes.post(
+  "/register",
+  [...validatesBodyRequestJs.registerValidation, validateResult],
+  userControllerJs.registerAccount,
 );
 // authRoutes.get('/get-otp', [isAuth], sendEmail);
 
