@@ -1,4 +1,5 @@
 import express, { urlencoded } from "express";
+import cors from "cors";
 import initSchemaTables from "../app/database/index.js";
 import { httpStatus } from "../app/constants/constants.http-status.code.js";
 import { serverMsg } from "../app/constants/constants.message-response.js";
@@ -12,6 +13,11 @@ initSchemaTables();
 setTimeout(async () => {
   await initAdmin();
 }, 200);
+app.use(cors({
+  origin: "*",
+  credentials: true
+}));
+app.use(express.json())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true

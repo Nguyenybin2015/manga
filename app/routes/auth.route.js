@@ -7,6 +7,9 @@ import validateResult from '../validators/validates.result.js';
 
 const authRoutes = Router();
 
+authRoutes.get('/test', function(req, res) {
+  res.send("test")
+ });
 authRoutes.post('/login', login);
 authRoutes.put(
   '/otp-verify',

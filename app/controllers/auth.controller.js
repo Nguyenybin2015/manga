@@ -10,7 +10,9 @@ dotenv.config();
 
 export async function login(req, res) {
   try {
-    const { body } = req;
+    const { body, query } = req;
+    console.log("body", body)
+    console.log("query", query)
     const result = await loginService(res, body);
     if (!res.headersSent) {
       responseRequest(res, result, authMsg.login);
