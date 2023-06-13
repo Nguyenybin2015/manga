@@ -2,9 +2,7 @@ import { Router } from "express";
 import { login, verifyOtp } from "../controllers/auth.controller.js";
 import * as validatesBodyRequestJs from "../validators/validates.body-request.js";
 import validateResult from "../validators/validates.result.js";
-import * as userControllerJs from '../controllers/user.controller.js';
-// import sendEmail from '../services/send-mail.service.js';
-// import isAuth from '../middlewares/authen-token.js';
+import * as userControllerJs from "../controllers/user.controller.js";
 
 const authRoutes = Router();
 

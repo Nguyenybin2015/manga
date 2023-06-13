@@ -10,7 +10,7 @@
 import Navbar from './components/Navbar.vue';
 import HomeView from './views/HomeView.vue';
 import Footer from './components/Footer.vue';
-</script>
+</script> 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 html,

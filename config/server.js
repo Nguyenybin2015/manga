@@ -13,17 +13,21 @@ initSchemaTables();
 setTimeout(async () => {
   await initAdmin();
 }, 200);
-app.use(cors({
-  origin: "*",
-  credentials: true
-}));
-app.use(express.json())
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  }),
+);
+app.use(express.json());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  }),
+);
 app.use(urlencoded({ extended: false }));
-app.use('/api', indexRouters);
+app.use("/api", indexRouters);
 
 app.use((err, res) => {
   console.log(err);

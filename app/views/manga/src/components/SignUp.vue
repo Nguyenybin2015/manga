@@ -154,7 +154,7 @@ export default {
   }
 }
 </script>
-
+  
 <style>
 .container-color {
   background-color: #1f2937;
