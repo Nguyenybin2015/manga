@@ -5,6 +5,6 @@ import { getAllMangaController } from "../controllers/manga.controller.js";
 
 const mangaRoute = Router();
 
-mangaRoute.get('/all', getAllMangaController);
+mangaRoute.get('/crawl', getAllMangaController);
 
 export default mangaRoute;
